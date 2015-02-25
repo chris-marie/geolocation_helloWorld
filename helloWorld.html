@@ -44,7 +44,8 @@
             flightPath.setMap(map);
 
             navigator.geolocation.watchPosition(function (data) {
-                console.log(data.coordinates.latitude, ', ', data.coordinates.longitude);
+                console.log(data);
+                console.log(data.coords.latitude, ', ', data.coords.longitude);
                 flightPlanCoordinates.push(new google.maps.LatLng(data.coords.latitude, data.coords.longitude));
                 flightPath = new google.maps.Polyline({
                     path: flightPlanCoordinates,
